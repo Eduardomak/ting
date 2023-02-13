@@ -21,7 +21,7 @@ def remove(instance):
     try:
         path_file = instance.dequeue()["nome_do_arquivo"]
         print(f"Arquivo {path_file} removido com sucesso")
-    except:
+    except TypeError:
         print("Não há elementos")
 
 
@@ -29,5 +29,5 @@ def file_metadata(instance, position):
     """Aqui irá sua implementação"""
     try:
         print(instance.search(position))
-    except:
+    except IndexError:
         print("Posição inválida", file=sys.stderr)
